@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Watch - Login/Register</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1>Anime Watch</h1>
+            <div class="toggle-box">
+                <a href="login.html"><button id="loginBtn" onclick="showLogin()">Login</button></a>
+                <button id="registerBtn" onclick="showRegister()">Register</button>
+            </div>
+            <div id="loginForm" class="form">
+                <h2>Register</h2>
+                <form>
+                    <div class="input-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="OTP" placeholder="OTP" required>
+                    </div>
+                  
+                    <button class="btn-submit" type="submit">Login</button>
+                    <a href="login.html"><p class="message">You have an account? <span onclick="showLogin()">Registerhere</span></p></a>
+                </form>
+            </div>
+            <div id="registerForm" class="form hidden">
+                <h2>Register</h2>
+                <form>
+                    <div class="input-group">
+                        <input type="text" placeholder="Username" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <button class="btn-submit" type="submit">Register</button>
+                    <a href="login.html"><p class="message">Already have an account? <span onclick="showLogin()">Login here</span></p></a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showLogin() {
+            document.getElementById('loginForm').classList.remove('hidden');
+            document.getElementById('registerForm').classList.add('hidden');
+            document.getElementById('loginBtn').classList.add('active');
+            document.getElementById('registerBtn').classList.remove('active');
+        }
+
+        function showRegister() {
+            document.getElementById('loginForm').classList.add('hidden');
+            document.getElementById('registerForm').classList.remove('hidden');
+            document.getElementById('registerBtn').classList.add('active');
+            document.getElementById('loginBtn').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
